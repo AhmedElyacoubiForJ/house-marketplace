@@ -17,6 +17,10 @@ function SignIn() {
   const navigate = useNavigate();
 
   const onChange = (e) => {
+    // anstead of email: e.target.value
+    // OR password: e.target.value
+    // we use the id of the current element,
+    // what its the same of the name of formdata object
     setFormData((prevState) => ({
       ...prevState,
       [e.target.id]: e.target.value,
@@ -81,7 +85,7 @@ function SignIn() {
           <div className="signInBar">
             <p className="signInText">Sign In</p>
             <button className="signInButton">
-              <ArrowRightIcon fill="#ffffff" width="34px" height="34px" />
+              <ArrowRightIcon fill="#ffffff" width="30px" height="30px" />
             </button>
           </div>
         </form>

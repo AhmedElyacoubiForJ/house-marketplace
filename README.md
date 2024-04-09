@@ -21,4 +21,4 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ### `npm run build`
 
-[svg to jsx](https://svg2jsx.com/)
+[convert svg to jsx component](https://svg2jsx.com/)

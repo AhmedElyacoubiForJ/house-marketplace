@@ -4,12 +4,12 @@ import OfferIcon from "../assets/svg/svg-to-component/OfferIcon";
 import ExploreIcon from "../assets/svg/svg-to-component/ExploreIcon";
 import PersonOutlineIcon from "../assets/svg/svg-to-component/PersonOutlineIcon";
 
-function NavBar() {
+function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
 
   const pathMatchRoute = (route) => {
-    if (route === location.pathname) {
+    if (route === location.pathname) { // pathname: example /profile
       return true;
     }
   };
@@ -18,6 +18,7 @@ function NavBar() {
     <footer className="navbar">
       <nav className="navbarNav">
         <ul className="navbarListItems">
+          {/* Explore */}
           <li
             className="navbarListItem"
             onClick={() => {
@@ -26,8 +27,8 @@ function NavBar() {
           >
             <ExploreIcon
               fill={pathMatchRoute("/") ? "#2c2c2c" : "#8f8f8f"}
-              width="36px"
-              height="36px"
+              width="28px"
+              height="28px"
             />
             <p
               className={
@@ -39,6 +40,7 @@ function NavBar() {
               Explore
             </p>
           </li>
+          {/* Offers */}
           <li
             className="navbarListItem"
             onClick={() => {
@@ -47,8 +49,8 @@ function NavBar() {
           >
             <OfferIcon
               fill={pathMatchRoute("/offers") ? "#2c2c2c" : "#8f8f8f"}
-              width="36px"
-              height="36px"
+              width="28px"
+              height="28px"
             />
             <p
               className={
@@ -60,6 +62,7 @@ function NavBar() {
               Offers
             </p>
           </li>
+          {/* Profile */}
           <li
             className="navbarListItem"
             onClick={() => {
@@ -68,14 +71,14 @@ function NavBar() {
           >
             <PersonOutlineIcon
               fill={pathMatchRoute("/profile") ? "#2c2c2c" : "#8f8f8f"}
-              width="36px"
-              height="36px"
+              width="28px"
+              height="28px"
             />
             <p
               className={
-                pathMatchRoute('/profile')
-                  ? 'navbarListItemNameActive'
-                  : 'navbarListItemName'
+                pathMatchRoute("/profile")
+                  ? "navbarListItemNameActive"
+                  : "navbarListItemName"
               }
             >
               Profile
@@ -87,4 +90,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default Navbar;

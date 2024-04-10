@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+import { toast } from "react-toastify";
+
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -58,7 +60,7 @@ function SignUp() {
       // redirect to home page
       navigate("/");
     } catch (error) {
-      console.log(error);
+      toast.error('Something went wrong with Registration');
     }
   };
 

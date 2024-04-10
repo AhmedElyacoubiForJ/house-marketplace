@@ -22,3 +22,9 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 ### `npm run build`
 
 [convert svg to jsx component](https://svg2jsx.com/)
+
+[React Toastify](https://github.com/fkhadra/react-toastify)
+
+[Toastify Demo](https://fkhadra.github.io/react-toastify/introduction/)
+
+### `npm i react-toastify`

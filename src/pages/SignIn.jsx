@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
+import { toast } from "react-toastify";
+
 import ArrowRightIcon from "../assets/svg/svg-to-component/ArrowRightIcon";
 import visibilityIcon from "../assets/svg/visibilityIcon.svg";
 
@@ -43,7 +45,7 @@ function SignIn() {
         navigate("/");
       }
     } catch (error) {
-      console.log(error);
+      toast.error('Bad User Credentials');
     }
   };
 

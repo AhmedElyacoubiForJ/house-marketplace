@@ -49,11 +49,11 @@ function SignUp() {
         displayName: name,
       });
 
-      const formDataCopy = {...formData };
+      const formDataCopy = { ...formData };
       delete formDataCopy.password;
-      formDataCopy.timestamp = serverTimestamp();
+      formDataCopy.timestamp = serverTimestamp(); // added property to formData object
 
-      await setDoc(doc(db, 'users', user.uid), formDataCopy);
+      await setDoc(doc(db, "users", user.uid), formDataCopy);
 
       // redirect to home page
       navigate("/");

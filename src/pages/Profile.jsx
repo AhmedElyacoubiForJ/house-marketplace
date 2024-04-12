@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { getAuth, updateProfile } from "firebase/auth";
 import { updateDoc, doc } from "firebase/firestore";
@@ -27,29 +27,29 @@ function Profile() {
   const onSubmit = async () => {
     try {
       if (auth.currentUser.displayName !== name) {
-          // Upadate display name in firebase
-          await updateProfile(auth.currentUser, {
-            displayName: name,
-          });
+        // Upadate display name in firebase
+        await updateProfile(auth.currentUser, {
+          displayName: name,
+        });
 
-          // Update display name in firestore
-         /*  await updateDoc(db.collection("users").doc(auth.currentUser.uid), {
+        // Update display name in firestore
+        /*  await updateDoc(db.collection("users").doc(auth.currentUser.uid), {
             displayName: name,
           }); */
-          const userRef = doc(db, "users", auth.currentUser.uid);
-          await updateDoc(userRef, {
-            name //name: name
-          });
+        const userRef = doc(db, "users", auth.currentUser.uid);
+        await updateDoc(userRef, {
+          name, //name: name
+        });
       }
     } catch (error) {
-      console.log(error)
-      toast.error('Could not update profile details')
+      console.log(error);
+      toast.error("Could not update profile details");
     }
   };
 
   const onChange = (e) => {
     setFormData((prevState) => ({
-     ...prevState,
+      ...prevState,
       [e.target.id]: e.target.value,
     }));
   };
@@ -88,7 +88,7 @@ function Profile() {
             type="text"
             id="email"
             className={!changeDetails ? "profileEmail" : "profileEmailActive"}
-            disabled={true}//disabled={!changeDetails}
+            disabled={true} //disabled={!changeDetails}
             value={email}
             onChange={onChange}
           />

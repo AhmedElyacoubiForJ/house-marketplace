@@ -28,3 +28,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 [Toastify Demo](https://fkhadra.github.io/react-toastify/introduction/)
 
 ### `npm i react-toastify`
+
+[Laden Sie Dateien mit Cloud Storage im Web hoch](https://firebase.google.com/docs/storage/web/upload-files?hl=de)
+
+### `npm i uuid`

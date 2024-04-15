@@ -195,7 +195,9 @@ function CreateListing() {
       geolocation,
       timestamp: serverTimestamp(),
     };
-
+    
+    // geolocation format address don't put street numbers
+    // formDataCopy.location = address
     delete formDataCopy.images;
     delete formDataCopy.address;
     location && (formDataCopy.location = location);

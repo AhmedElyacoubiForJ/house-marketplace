@@ -32,3 +32,11 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 [Laden Sie Dateien mit Cloud Storage im Web hoch](https://firebase.google.com/docs/storage/web/upload-files?hl=de)
 
 ### `npm i uuid`
+
+### `npm i leaflet react-leaflet`
+
+[React Leaflet](https://react-leaflet.js.org/)
+
+[Leaflet Tutorials](https://leafletjs.com/examples.html)
+
+[Leaflet Quick Start Guide](https://leafletjs.com/examples/quick-start/)

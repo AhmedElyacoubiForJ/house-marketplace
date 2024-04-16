@@ -40,3 +40,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 [Leaflet Tutorials](https://leafletjs.com/examples.html)
 
 [Leaflet Quick Start Guide](https://leafletjs.com/examples/quick-start/)
+
+### `npm i swiper`
+
+[Swiper React Components](https://swiperjs.com/react)

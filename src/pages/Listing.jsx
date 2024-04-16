@@ -1,11 +1,16 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { register } from "swiper/element/bundle";
+
+import "swiper/swiper-bundle.css";
 import { getDoc, doc } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import { db } from "../firebase.config";
 import Spinner from "../components/Spinner";
 import shareIcon from "../assets/svg/shareIcon.svg";
+
+register();
 
 function Listing() {
   const [listing, setListing] = useState(null);
@@ -39,6 +44,24 @@ function Listing() {
   return (
     <main>
       {/* SLIDER */}
+      <swiper-container
+        space-between="10"
+        slides-per-view="1"
+        pagination="true"
+        navigation="true"
+      >
+        {listing.imgUrls.map((url, index) => (
+          <swiper-slide key={index}>
+            <div
+              style={{
+                background: `url(${listing.imgUrls[index]}) center no-repeat`,
+                backgroundSize: "cover",
+              }}
+              className="swiperSlideDiv"
+            ></div>
+          </swiper-slide>
+        ))}
+      </swiper-container>
 
       <div
         className="shareIconDiv"
@@ -101,7 +124,7 @@ function Listing() {
           >
             <TileLayer
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-              url='https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png'
+              url="https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png"
             />
             <Marker
               position={[listing.geolocation.lat, listing.geolocation.lng]}

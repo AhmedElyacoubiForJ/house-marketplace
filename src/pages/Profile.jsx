@@ -13,7 +13,6 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 import { db } from "../firebase.config";
-
 import { toast } from "react-toastify";
 import ListingItem from "../components/ListingItem";
 import arrowRight from "../assets/svg/keyboardArrowRightIcon.svg";
@@ -48,7 +47,7 @@ function Profile() {
         // Update display name in firestore
         const userRef = doc(db, "users", auth.currentUser.uid);
         await updateDoc(userRef, {
-          name, //name: name
+          name,
         });
       }
     } catch (error) {
@@ -142,7 +141,7 @@ function Profile() {
             type="text"
             id="email"
             className={!changeDetails ? "profileEmail" : "profileEmailActive"}
-            disabled={true} //disabled={!changeDetails}
+            disabled={true}
             value={email}
             onChange={onChange}
           />

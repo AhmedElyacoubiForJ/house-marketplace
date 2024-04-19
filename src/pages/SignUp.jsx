@@ -1,10 +1,6 @@
-// Save User To Firerstore
-
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
 import { toast } from "react-toastify";
-
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -12,9 +8,7 @@ import {
 } from "firebase/auth";
 import { setDoc, doc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase.config";
-
 import OAuth from "../components/OAuth";
-
 import ArrowRightIcon from "../assets/svg/svg-to-component/ArrowRightIcon";
 import visibilityIcon from "../assets/svg/visibilityIcon.svg";
 

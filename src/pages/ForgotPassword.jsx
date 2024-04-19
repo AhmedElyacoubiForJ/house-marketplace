@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 
 import { toast } from "react-toastify";
-//import ArrowRightIcon from "../assets/svg/svg-to-component/ArrowRightIcon"
 import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRightIcon.svg";
 
 function ForgotPassword() {

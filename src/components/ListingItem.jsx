@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
-import DeleteIcon from "../assets/svg/svg-to-component/DeleteIcon"
+import DeleteIcon from "../assets/svg/svg-to-component/DeleteIcon";
+import EditIcon from "../assets/svg/svg-to-component/EditIcon";
 import bedIcon from "../assets/svg/bedIcon.svg";
 import bathtubIcon from "../assets/svg/bathtubIcon.svg";
 
@@ -49,10 +50,13 @@ function ListingItem({ listing, id, onEdit, onDelete }) {
       </Link>
       {onDelete && (
         <DeleteIcon
-          className='removeIcon'
-          fill='rgb(231, 76,60)'
+          className="removeIcon"
+          fill="rgb(231, 76,60)"
           onDelete={() => onDelete(listing.id)}
         />
+      )}
+      {onEdit && (
+        <EditIcon className="editIcon" onEdit={() => onEdit(id)} />
       )}
     </li>
   );

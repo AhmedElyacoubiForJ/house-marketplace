@@ -1,6 +1,6 @@
 import React from "react";
 
-function ArrowRightIcon({ fill, width, height}) {
+function ArrowRightIcon({ fill, width, height }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

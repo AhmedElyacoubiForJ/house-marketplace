@@ -6,12 +6,7 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from "firebase/storage";
-import {
-  Timestamp,
-  addDoc,
-  collection,
-  serverTimestamp,
-} from "firebase/firestore";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase.config";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -19,6 +14,7 @@ import { v4 as uuid4 } from "uuid";
 import Spinner from "../components/Spinner";
 
 function CreateListing() {
+  // eslint-disable-next-line
   const [geolocationEnabled, setGeolocationEnabled] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -149,6 +145,8 @@ function CreateListing() {
               case "running":
                 console.log("Upload is running");
                 break;
+              default:
+                break;
             }
           },
           (error) => {
@@ -195,7 +193,7 @@ function CreateListing() {
       geolocation,
       timestamp: serverTimestamp(),
     };
-    
+
     // geolocation format address don't put street numbers
     // formDataCopy.location = address
     delete formDataCopy.images;

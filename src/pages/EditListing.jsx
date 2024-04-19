@@ -6,12 +6,7 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from "firebase/storage";
-import {
-  doc,
-  updateDoc,
-  getDoc,
-  serverTimestamp,
-} from "firebase/firestore";
+import { doc, updateDoc, getDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase.config";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -19,6 +14,7 @@ import { v4 as uuid4 } from "uuid";
 import Spinner from "../components/Spinner";
 
 function EditListing() {
+  // eslint-disable-next-line
   const [geolocationEnabled, setGeolocationEnabled] = useState(false);
   const [listing, setListing] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -63,10 +59,10 @@ function EditListing() {
   // Redirect if listing is not user's
   useEffect(() => {
     if (listing && listing.useRef !== auth.currentUser.uid) {
-      toast.error("You can not edit that listing")
+      toast.error("You can not edit that listing");
       navigate("/");
     }
-  }, [])
+  });
 
   // fetch listing to edit
   useEffect(() => {
@@ -179,6 +175,8 @@ function EditListing() {
               case "running":
                 console.log("Upload is running");
                 break;
+              default:
+                break;
             }
           },
           (error) => {
@@ -235,7 +233,7 @@ function EditListing() {
 
     // Update listing
     const docRef = doc(db, "listings", params.listingId);
-    await updateDoc(docRef, formDataCopy)
+    await updateDoc(docRef, formDataCopy);
     setLoading(false);
     toast.success("Listing saved");
     navigate(`/category/${formDataCopy.type}/${docRef.id}`);

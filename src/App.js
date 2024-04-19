@@ -14,7 +14,7 @@ import CreateListing from "./pages/CreateListing";
 import EditListing from "./pages/EditListing";
 import Listing from "./pages/Listing";
 import Contact from "./pages/Contact";
-import Navbar from "./components/Navbar";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
@@ -38,7 +38,7 @@ function App() {
           />
           <Route path="/contact/:landlordId" element={<Contact />} />
         </Routes>
-        <Navbar />
+        <NavBar />
       </Router>
       <ToastContainer />
     </>

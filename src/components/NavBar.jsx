@@ -4,12 +4,12 @@ import OfferIcon from "../assets/svg/svg-to-component/OfferIcon";
 import ExploreIcon from "../assets/svg/svg-to-component/ExploreIcon";
 import PersonOutlineIcon from "../assets/svg/svg-to-component/PersonOutlineIcon";
 
-function Navbar() {
+function NavBar() {
   const navigate = useNavigate();
   const location = useLocation();
 
   const pathMatchRoute = (route) => {
-    if (route === location.pathname) { // pathname: example /profile
+    if (route === location.pathname) {
       return true;
     }
   };
@@ -90,4 +90,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default NavBar;
